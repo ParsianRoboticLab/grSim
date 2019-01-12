@@ -26,6 +26,13 @@ addons:
       - libode-dev
       - libboost-dev
 
+before_cache:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cleanup ; fi
+
+cache:
+  directories:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then $HOME/Library/Caches/Homebrew ; fi
+
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null                   ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew tap cartr/qt4                        ; fi
