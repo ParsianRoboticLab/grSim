@@ -45,29 +45,29 @@ before_install:
 cache:
   directories:
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then $HOME/Library/Caches/Homebrew ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/openssl      ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/openssl         ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/qt@4         ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/qt@4            ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/sqlite       ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/sqlite          ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/python/3.7.2       ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/python/3.7.2          ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/sphinx-doc       ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/sphinx-doc          ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/python@2/2.7.15_1       ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/python@2/2.7.15_1          ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/Cellar/ode/0.15.2_2       ; fi
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then/usr/local/opt/ode/0.15.2_2          ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/openssl      ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/openssl         ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/qt@4         ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/qt@4            ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/sqlite       ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/sqlite          ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/python/3.7.2       ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/python/3.7.2          ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/sphinx-doc       ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/sphinx-doc          ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/python@2/2.7.15_1       ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/python@2/2.7.15_1          ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/ode/0.15.2_2       ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/opt/ode/0.15.2_2          ; fi
 before_install:
-  - test -d /usr/local/opt/openssl/lib             || { rmdir /usr/local/opt/openssl; }
-  - test -d /usr/local/opt/qt@4/lib                || { rmdir /usr/local/opt/qt@4;    }
-  - test -d /usr/local/opt/sqlite/lib              || { rmdir /usr/local/opt/check; }
-  - test -d /usr/local/opt/python/3.7.2/lib        || { rmdir /usr/local/opt/python/3.7.2; }
-  - test -d /usr/local/opt/sphinx-doc/lib          || { rmdir /usr/local/opt/sphinx-doc; }
-  - test -d /usr/local/opt/python@2/2.7.15_1/lib   || { rmdir /usr/local/opt/python@2/2.7.15_1; }
-  - test -d /usr/local/opt/protobuf/3.6.1.3_1/lib  || { rmdir /usr/local/opt/protobuf/3.6.1.3_1; }
-  - test -d /usr/local/opt/ode/0.15.2_2/lib        || { rmdir /usr/local/opt/ode/0.15.2_2; }
+  - test -d /usr/local/opt/openssl/lib             || { rm -rf /usr/local/opt/openssl; }
+  - test -d /usr/local/opt/qt@4/lib                || { rm -rf /usr/local/opt/qt@4;    }
+  - test -d /usr/local/opt/sqlite/lib              || { rm -rf /usr/local/opt/check; }
+  - test -d /usr/local/opt/python/3.7.2/lib        || { rm -rf /usr/local/opt/python/3.7.2; }
+  - test -d /usr/local/opt/sphinx-doc/lib          || { rm -rf /usr/local/opt/sphinx-doc; }
+  - test -d /usr/local/opt/python@2/2.7.15_1/lib   || { rm -rf /usr/local/opt/python@2/2.7.15_1; }
+  - test -d /usr/local/opt/protobuf/3.6.1.3_1/lib  || { rm -rf /usr/local/opt/protobuf/3.6.1.3_1; }
+  - test -d /usr/local/opt/ode/0.15.2_2/lib        || { rm -rf /usr/local/opt/ode/0.15.2_2; }
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null                   ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew tap cartr/qt4                        ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew tap-pin cartr/qt4                    ; fi
