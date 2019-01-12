@@ -31,19 +31,6 @@ before_cache:
 
 cache:
   directories:
-    - /usr/local/Cellar/openssl
-    - /usr/local/opt/openssl
-    - /usr/local/Cellar/libevent
-    - /usr/local/opt/libevent
-    - /usr/local/Cellar/check
-    - /usr/local/opt/check
-before_install:
-  - test -d /usr/local/opt/openssl/lib  || { rmdir /usr/local/opt/openssl; brew install openssl; }
-  - test -d /usr/local/opt/libevent/lib || { rmdir /usr/local/opt/libevent; brew install libevent; }
-  - test -d /usr/local/opt/check/lib    || { rmdir /usr/local/opt/check; brew install check; }
-
-cache:
-  directories:
     - $HOME/Library/Caches/Homebrew
     - /usr/local/Cellar/openssl     
     - /usr/local/opt/openssl        
